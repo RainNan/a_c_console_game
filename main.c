@@ -1,6 +1,7 @@
 #include "startup.c"
 #include "start.c"
 #include "show.c"
+#include "update_warrior.c"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,41 +9,40 @@
 #include <conio.h>
 #include <time.h>
 
-#define X 25
-#define Y 50
+#define X 10
+#define Y 16
 
 int start();
 void HideCursor();
 void show(int *p[X]);
-
+int update_warrior(int *pm[],int* px, int* py);
 
 void main(){
-	//start();
 	int map[X][Y] = {0};
 	int *p[X];
+	int w_x = 6, w_y = 6;
+	int l_x = 4, l_y = 4;
+	HideCursor();
+	start();
+
 	for(int i = 0; i < X; i++){ 
         map[i][0] = 2;
         map[i][Y-1] = 2;
     }
-    for(int i = 0; i < Y;i++)
+    for(int i = 0; i < Y; i++)
 	{
         map[0][i] = 2;
         map[X-1][i] = 2;
     }
 	for(int i = 0; i < X; i++)
 		p[i] = map[i];
-	show(map);
-
-	system("pause");
-
-    switch(start()){
-		case 1:
-			while(1){
-				show(map);
-			}
-		case 2:
-			;
+	map[w_x][w_y] = 1;
+	map[l_x][l_y] = 3;
+	while(1){
+		show(p);
+		update_warrior(p, &w_x, &w_y);
 	}
+
 
 
 

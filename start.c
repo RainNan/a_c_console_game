@@ -23,9 +23,9 @@ int start(){
         return 2;
         break;
     case '3':
-        system('cls');
-        printf("help");
-        system('pause');
+        system("cls");
+        printf("help.........");
+        system("pause");
         start();
         break;
     case '4':
@@ -37,9 +37,4 @@ int start(){
         start();
         break;        
     }
-}
-
-void quit(){
-    system('cls');
-    printf("thank you for playing!\n");
 }
