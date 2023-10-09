@@ -2,7 +2,7 @@
 #include "show.c"
 #include "move.h"
 #include "update.h"
-//#include "lian_gong.h"
+#include "lian_gong.c"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,10 +23,7 @@ void main(){
 	int map[X][Y] = {0};
 	int *p[X];
 	int w_x = 6, w_y = 6;
-	int l_x = 4, l_y = 4;//练功房坐标
-	int a_x = 2, a_y = 8;
-	int b_x = 2, b_y = 10;
-	int c_x = 2, c_y = 12;
+	int l_x = 4, l_y = 4;
 	HideCursor();
 	start();
 
@@ -43,9 +40,6 @@ void main(){
 		p[i] = map[i];
 	map[w_x][w_y] = 1;
 	map[l_x][l_y] = 3;
-	map[a_x][a_y] = 4;
-	map[b_x][b_y] = 5;
-	map[c_x][c_y] = 6;
 
 	while(1){
 		show(p);

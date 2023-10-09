@@ -1,21 +1,30 @@
-//data.h
-#include <stdio.h>
+#ifndef DATA_H //防止头文件重复包含
+#define DATA_H
+
+#include <time.h>
+
 struct warrior{
     char name[10];
     int gold;
     int level;
-    float exp;
-    float next_exp;
-    int max_hp;
-    int hp;
-    int max_mp;
-    int mp;
-    float dmg;
-    float def;
-}warrior = {"john", 0, 1, 0, 100, 100, 100, 120, 120, 10, 8};
-
-struct monster{
+    int exp;
+    int next_exp;
+    float max_hp;
     float hp;
+    float max_mp;
+    float mp;
     float dmg;
     float def;
 };
+extern struct warrior warrior;
+
+struct monster{
+    float hp;
+    float max_hp;
+    float dmg;
+    float def;
+    int reward;
+};
+extern struct monster monster_a, monster_b, monster_c;
+
+#endif
